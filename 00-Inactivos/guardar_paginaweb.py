@@ -4,7 +4,7 @@ import urllib
 import ssl
 import mysql.connector
 context = ssl._create_unverified_context()
-conexion1=mysql.connector.connect(host="localhost", user="pansseritos", passwd="P$ljl2406", database="travian")
+conexion1=mysql.connector.connect(host="localhost", user="root", passwd="", database="travian")
 cursor1=conexion1.cursor()
 cursor1.execute("select ruta_inac,nombre,id from servidor")
 informacion = list()
@@ -12,7 +12,7 @@ informacion = list()
 for base in cursor1:
     id_server=base[2]
 	
-    print(base[1])
+    #print(base[1])
     url = base[0]
     nombre_fichero="map"+ base[1]+".sql"
     nombre_fichero =nombre_fichero.replace(' ','_')
