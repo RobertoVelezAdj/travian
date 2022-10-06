@@ -9,7 +9,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class=" bg-white overflow-hidden shadow-xl sm:rounded-lg">
-            <h1>Bienvenido a vacas</h1>
+            <h1>Bienvenido a  prueba subida automatica</h1>
             </div>
         </div>
     </div>
