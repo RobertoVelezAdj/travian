@@ -31,5 +31,5 @@ Route::middleware([
 Route::get('/construcciones', [App\Http\Controllers\ConstruccionesController::class, 'inicio'])->name('construcciones');
 Route::get('/aldeas', [App\Http\Controllers\AldeaController::class, 'inicio'])->name('aldeas');
 Route::get('/vacas', [App\Http\Controllers\VacasController::class, 'inicio'])->name('vacas');
-Route::get('/vacas/cargarVacas', [App\Http\Controllers\VacasController::class, 'cargaVacas'])->name('cargaVacas');
+Route::get('/cargar/Vacasvacas/', [App\Http\Controllers\VacasController::class, 'cargaVacas'])->name('cargaVacas');
 Route::get('/adminUsuarios', [App\Http\Controllers\UserController::class, 'index'])->name('adminUsuarios');
