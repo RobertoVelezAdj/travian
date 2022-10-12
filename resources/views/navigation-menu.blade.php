@@ -8,43 +8,152 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css" rel="stylesheet">
-    
+    <style type="text/css">
+			
+			* {
+				margin:0px;
+				padding:0px;
+			}
+			
+			#header {
+				margin:auto;
+				width:500px;
+				font-family:Arial, Helvetica, sans-serif;
+			}
+			
+			ul, ol {
+				list-style:none;
+			}
+			
+			.nav > li {
+				float:left;
+			}
+			
+			.nav li a {
+				background-color:#000;
+				color:#fff;
+				text-decoration:none;
+				padding:10px 12px;
+				display:block;
+			}
+			
+			.nav li a:hover {
+				background-color:#434343;
+			}
+			
+			.nav li ul {
+				display:none;
+				position:absolute;
+				min-width:140px;
+			}
+			
+			.nav li:hover > ul {
+				display:block;
+			}
+			
+			.nav li ul li {
+				position:relative;
+			}
+			
+			.nav li ul li ul {
+				right:-140px;
+				top:0px;
+			}
+			
+		</style>
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
-            <div class="flex">
-                <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-jet-application-mark class="block h-9 w-auto" />
-                    </a>
-                </div>
+            <div class="hidden sm:flex sm:items-center sm:ml-6">
+                <div class="flex">
+                    <!-- Logo -->
+                    <div class="shrink-0 flex items-center">
+                        <a href="{{ route('dashboard') }}">
+                            <x-jet-application-mark class="block h-9 w-auto" />
+                        </a>
+                    </div>
 
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('adminUsuarios') }}" :active="request()->routeIs('adminUsuarios')">
-                        {{ __('Administracion') }}
-                    </x-jet-nav-link>
+                    <!-- Navigation Links -->
+                    <div class="ml-3 relative hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-dropdown align="right" width="48">
+                            <x-slot name="trigger">
+                            
+                                    <span class="inline-flex rounded-md">
+                                        <button type="button"   class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
+                                        {{ __('Construcciones') }}
+                                        <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+                                    </span>
+                            </x-slot>
+
+                            <x-slot name="content">
+                                <!-- Account Management -->
+                            
+                                <x-jet-dropdown-link href="{{ route('construcciones') }}">
+                                    {{ __('Cálculo de construcciones') }}
+                                </x-jet-dropdown-link>
+
+
+                            </x-slot>
+                        </x-jet-dropdown>
+                    </div>
+                    <div class="ml-3 relative hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-dropdown align="right" width="48">
+                            <x-slot name="trigger">
+                            
+                                    <span class="inline-flex rounded-md">
+                                        <button type="button"   class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
+                                        {{ __('Aldeas') }}
+                                        <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+                                    </span>
+                            </x-slot>
+
+                            <x-slot name="content">
+                                <!-- Account Management -->
+                            
+                                <x-jet-dropdown-link href="{{ route('aldeas') }}">
+                                    {{ __('Información de aldeas') }}
+                                </x-jet-dropdown-link>
+
+
+                            </x-slot>
+                        </x-jet-dropdown>
+                    </div>
+                    <div class="ml-3 relative hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-dropdown align="right" width="48">
+                            <x-slot name="trigger">
+                            
+                                    <span class="inline-flex rounded-md">
+                                        <button type="button"   class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
+                                        {{ __('Vacas') }}
+                                        <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+                                    </span>
+                            </x-slot>
+
+                            <x-slot name="content">
+                                <!-- Account Management -->
+                            
+                                <x-jet-dropdown-link href="{{ route('vacas') }}">
+                                    {{ __('Futuras vacas') }}
+                                </x-jet-dropdown-link>
+                                <x-jet-dropdown-link href="{{ route('vacas') }}">
+                                    {{ __('Lista de vacas') }}
+                                </x-jet-dropdown-link>
+
+
+                            </x-slot>
+                        </x-jet-dropdown>
+                    </div>
                 </div>
-                 <!-- Construcciones -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('construcciones') }}" :active="request()->routeIs('construcciones')">
-                        {{ __('Construcciones') }}
-                    </x-jet-nav-link>
-                </div>
-                <!-- Construcciones -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('aldeas') }}" :active="request()->routeIs('aldeas')">
-                        {{ __('Aldeas') }}
-                    </x-jet-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('vacas') }}" :active="request()->routeIs('vacas')">
-                        {{ __('Lista de vacas') }}
-                    </x-jet-nav-link>
-                </div>
-                
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
