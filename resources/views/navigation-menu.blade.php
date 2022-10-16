@@ -120,10 +120,18 @@
                                 <x-jet-dropdown-link href="{{ route('aldeas') }}">
                                     {{ __('Información de aldeas') }}
                                 </x-jet-dropdown-link>
+                                <x-jet-dropdown-link href="/aldeas/edificios">
+                                    {{ __('Edificios') }}
+                                </x-jet-dropdown-link>
+                                <x-jet-dropdown-link href="/aldeas/tareas">
+                                    {{ __('Tareas') }}
+                                </x-jet-dropdown-link>
 
 
                             </x-slot>
+                            
                         </x-jet-dropdown>
+                       
                     </div>
                     <div class="ml-3 relative hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-jet-dropdown align="right" width="48">
@@ -145,12 +153,39 @@
                                 <x-jet-dropdown-link href="{{ route('vacas') }}">
                                     {{ __('Futuras vacas') }}
                                 </x-jet-dropdown-link>
-                                <x-jet-dropdown-link href="{{ route('vacas') }}">
+                                <x-jet-dropdown-link href="{{ route('ListasVacas') }}">
                                     {{ __('Lista de vacas') }}
                                 </x-jet-dropdown-link>
 
 
                             </x-slot>
+                        </x-jet-dropdown>
+                        <x-jet-dropdown align="right" width="48">
+                            <x-slot name="trigger">
+                            
+                                    <span class="inline-flex rounded-md">
+                                        <button type="button"   class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
+                                        {{ __('Tropas') }}
+                                        <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+                                    </span>
+                            </x-slot>
+
+                            <x-slot name="content">
+                                <!-- Account Management -->
+                            
+                                <x-jet-dropdown-link href="{{ route('aldeas') }}">
+                                    {{ __('Encole off') }}
+                                </x-jet-dropdown-link>
+                                <x-jet-dropdown-link href="/aldeas/edificios">
+                                    {{ __('Calculadora Ofensiva') }}
+                                </x-jet-dropdown-link>
+
+
+                            </x-slot>
+                            
                         </x-jet-dropdown>
                     </div>
                 </div>
