@@ -21,7 +21,7 @@
     </x-slot>
 
 
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 text-center ">
+    <div class="w-75 p-3 mx-auto sm:px-6 lg:px-8 text-center ">
         <div class="card-body "> 
        
            
@@ -35,7 +35,7 @@
                 <th>Establo</th>
                 <th>Establo g.</th>
                 <th>Taller</th>
-                <th>Ayun.</th> 
+                <th>Ayuntamiento</th> 
                 <th>P. torneos</th>  
                 <th>O. comercio</th>   
                 <th>Opciones</th>

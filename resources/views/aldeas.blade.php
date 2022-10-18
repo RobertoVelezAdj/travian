@@ -21,7 +21,7 @@
     </x-slot>
 
 
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 text-center ">
+    <div class="w-75 p-3 mx-auto sm:px-6 lg:px-8 text-center ">
         <div class="card-body "> 
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">

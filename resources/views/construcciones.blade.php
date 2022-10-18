@@ -78,13 +78,13 @@
             {{ __('Construcciones') }}
         </h2>
     </x-slot>
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 text-center ">
+    <div class="w-75 p-3 mx-auto sm:px-6 lg:px-8 text-center ">
         <h1>Elegidos</h1>
 
     <a href="/construcciones" class="btn btn-primary btn-lg btn-block"> Refrescar</a>
     </div>
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="w-75 p-3 mx-auto sm:px-6 lg:px-8">
             <div class=" bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="card-body">
                     <table id="topciones" class="table table-bordered table-striped table-responsive ">
@@ -120,11 +120,11 @@
             </div>
         </div>
     </div>
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 text-center ">
+    <div class="w-75 p-3 mx-auto sm:px-6 lg:px-8 text-center ">
         <h1 class="center">Construcciones</h1>
     </div>
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="w-75 p-3 mx-auto sm:px-6 lg:px-8">
             <div class=" bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="card-body">
                     <table id="tconstrucciones" class="table table-bordered table-striped table-responsive ">

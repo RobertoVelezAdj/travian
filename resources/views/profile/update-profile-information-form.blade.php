@@ -73,15 +73,20 @@
         <!-- Alianza -->
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="raza" value="{{ __('raza') }}" />
-            <x-jet-input id="raza" type="text" class="mt-1 block w-full" wire:model.defer="state.raza" autocomplete="raza" />
+            <select  id="raza" name="raza" class ="block mt-1 w-full rounded" >
+                    <option value = "1">{{ __('Romana') }}</option>
+                    <option value = "2">{{ __('Germana') }}</option>
+                    <option value = "3">{{ __('Gala') }}</option>
+                </select>
             <x-jet-input-error for="raza" class="mt-2" />
         </div>
         <!-- servidor -->
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="servidor" value="{{ __('servidor') }}" />
             <select  id="servidor" name="servidor" class ="block mt-1 w-full rounded" wire:model.defer="state.servidor">
-                <option value = "8">{{ __('America 8') }}</option>
-                <option value = "10">{{ __('Hispano 10') }}</option>
+                <option value = "1">{{ __('America 8 - 2022') }}</option>
+                <option value = "2">{{ __('America 1 - 2022') }}</option>
+                <option value = "3">{{ __('Travian Eternos - 2022') }}</option>
             </select>
             <x-jet-input-error for="servidor" class="mt-2" />
         </div>

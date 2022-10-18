@@ -176,7 +176,7 @@
                             <x-slot name="content">
                                 <!-- Account Management -->
                             
-                                <x-jet-dropdown-link href="{{ route('aldeas') }}">
+                                <x-jet-dropdown-link href="/tropas/encole_off">
                                     {{ __('Encole off') }}
                                 </x-jet-dropdown-link>
                                 <x-jet-dropdown-link href="/aldeas/edificios">

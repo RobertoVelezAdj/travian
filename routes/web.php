@@ -27,8 +27,10 @@ Route::middleware([
     })->name('dashboard');
 });
 
-
+//Menu construcciones
 Route::get('/construcciones', [App\Http\Controllers\ConstruccionesController::class, 'inicio'])->name('construcciones');
+
+//Menu aldeas
 Route::get('/aldeas', [App\Http\Controllers\AldeaController::class, 'inicio'])->name('aldeas');
 Route::put('/aldeas/nueva', [App\Http\Controllers\AldeaController::class, 'generadorAldea'])->name('aldeas.nueva');
 Route::put('/aldeas/borrar', [App\Http\Controllers\AldeaController::class, 'borrarAldea'])->name('aldeas.borrar');
@@ -40,11 +42,17 @@ Route::put('/aldeas/editartarea', [App\Http\Controllers\AldeaController::class, 
 Route::get('/aldeas/edificios', [App\Http\Controllers\AldeaController::class, 'edificios'])->name('aldea.edificios');
 Route::put('/aldeas/edificioseditar', [App\Http\Controllers\AldeaController::class, 'edificioseditar'])->name('aldea.edificioseditar');
 
+//Menu encole
+Route::get('/tropas/encole_off', [App\Http\Controllers\tropasController::class, 'encole'])->name('tropas.encole');
+//Route::get('/tropas/anadirencole', [App\Http\Controllers\tropasController::class, 'anadirencole'])->name('tropas.anadirencole');
+
+
+//Menu vacas
 Route::get('/vacas', [App\Http\Controllers\VacasController::class, 'inicio'])->name('vacas');
 Route::get('/vacas/listas', [App\Http\Controllers\VacasController::class, 'listaVacas'])->name('ListasVacas');
 Route::put('/vacas/insertarVacas', [App\Http\Controllers\VacasController::class, 'insertarVacas'])->name('insertarVacas');
-
 Route::put('/vacas/calculovacas', [App\Http\Controllers\VacasController::class, 'calculovacas'])->name('calculovacas');
 
+//Admin usuarios
 Route::get('/adminUsuarios', [App\Http\Controllers\UserController::class, 'index'])->name('adminUsuarios');
 

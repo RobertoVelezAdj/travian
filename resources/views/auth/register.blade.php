@@ -19,12 +19,21 @@
             </div>
 
             <div>
-                <x-jet-label for="servidor" value="{{ __('Servidor') }}" />
-                <x-jet-input id="servidor" class="block mt-1 w-full" type="text" name="servidor" :value="old('servidor')" required autofocus autocomplete="server" />
+            <x-jet-label for="servidor" value="{{ __('servidor') }}" />
+            <select  id="servidor" name="servidor" class ="block mt-1 w-full rounded" wire:model.defer="state.servidor">
+                <option value = "1">{{ __('America 8 - 2022') }}</option>
+                <option value = "2">{{ __('America 1 - 2022') }}</option>
+                <option value = "3">{{ __('Travian Eternos - 2022') }}</option>
+            </select>
+            <x-jet-input-error for="servidor" class="mt-2" />
             </div>
             <div>
                 <x-jet-label for="raza" value="{{ __('raza') }}" />
-                <x-jet-input id="raza" class="block mt-1 w-full" type="text" name="raza" :value="old('raza')" required autofocus autocomplete="raza" />
+                <select  id="raza" name="raza" class ="block mt-1 w-full rounded" wire:model.defer="state.raza">
+                    <option value = "1">{{ __('Romana') }}</option>
+                    <option value = "2">{{ __('Germana') }}</option>
+                    <option value = "3">{{ __('Gala') }}</option>
+                </select>
             </div>
 
             <div class="mt-4">
